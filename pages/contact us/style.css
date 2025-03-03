@@ -1,0 +1,429 @@
+.contact-form-section {
+    transform: translateY(-80px);
+  }
+  
+  .contact-section {
+    position: relative;
+    margin-top: 70px;
+  }
+  
+  .contact-bg {
+    background-color: rgb(0, 0, 0, 1);
+  }
+  
+  .image {
+    background-image: url(../../images/contact_bg.jpg);
+    height: 60vh;
+    opacity: 0.4;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+  
+  .contact-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+    color: #fff;
+    z-index: 1;
+  }
+  
+  .contact-title h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .contact-title p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+  }
+  
+  .contact-info-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: -100px auto 0;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .contact-card {
+    background: var(--secondary-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1;
+    max-width: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--blog);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+  }
+  
+  .card-icon svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  
+  .contact-card h2 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin: 0 0 0.75rem;
+  }
+  
+  .contact-link {
+    color: var(--blog);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    color: var(--blog-secondary);
+  }
+  
+  .contact-card p {
+    color: var(--acsent-color);
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  
+  .form-title {
+    margin-bottom: 3.5rem;
+  }
+  
+  .contact-form-section {
+    width: 80%;
+    max-width: 1300px;
+    margin: auto;
+  }
+  
+  .first-contact-section {
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form {
+    background-color: var(--secondary-bg);
+    color: var(--primary-color);
+    padding: 3rem 2.5rem;
+    font-family: "Rubik", sans-serif;
+    box-shadow: rgb(0, 0, 0, 0.1) 0px 0px 5px 0px,
+      rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  }
+  
+  .send-title {
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container label {
+    position: absolute;
+    top: -13px;
+    left: 0px;
+    font-size: 12px;
+    color: var(--acsent-color);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .input-container input {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: var(--primary-color);
+  }
+  
+  .submit-btn {
+    margin-top: 2rem;
+  }
+  
+  .submit-btn a {
+    color: #fff;
+    background: var(--blog);
+    float: right;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+  }
+  
+  .submit-btn a:hover {
+    background-color: var(--blog-secondary);
+  }
+  
+  .social-contact {
+    background-color: var(--blog);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    gap: 2rem;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  .social-contact p {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  .mail-content {
+    place-content: center;
+    place-self: center;
+    display: grid;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .mail-content a {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+  
+  .mail-logo {
+    place-content: center;
+    border-radius: 0.5rem;
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+    display: grid;
+    background-color: rgb(0, 0, 0, 0.2);
+  }
+  
+  .mail-logo svg {
+    place-content: center;
+    text-align: center;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: center;
+    font-size: 1.875rem;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .icons a {
+    color: #fff;
+  }
+  
+  @media only screen and (min-width: 900px) {
+    /* For Desktop */
+  
+    .contact-form-section {
+      display: flex;
+    }
+  
+    .contact-form {
+      width: 70%;
+    }
+  
+    .contact-title {
+      display: flex;
+      height: 100%;
+      margin-left: 15%;
+      align-items: center;
+    }
+  
+    .form-title {
+      font-size: 2.25rem;
+    }
+  
+    .form-title {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+    }
+  
+    .first-contact-section {
+      gap: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .submit-btn a {
+      color: #fff;
+      border-radius: 5px;
+      padding: 1rem 2rem;
+      background: var(--blog);
+      float: right;
+      font-size: 1.25rem;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      transition: all 0.4s ease;
+    }
+  
+    .submit-btn a:hover {
+      background-color: var(--blog-secondary);
+    }
+  
+    .submit-btn a svg {
+      margin-left: 0.6rem;
+    }
+  
+    .social-contact {
+      width: 30%;
+      background-color: var(--blog);
+    }
+  
+    .contact-info-section {
+        padding: 3rem 2rem;
+        gap: 1.5rem;
+    }
+  
+    .contact-card {
+        padding: 1.5rem;
+        max-width: 220px;
+    }
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .contact-form-section {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .contact-title {
+      text-align: center;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .form-title {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .first-contact-section {
+      gap: 2rem;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .submit-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .submit-btn a {
+      color: #fff;
+      border-radius: 5px;
+      padding: 1rem 2rem;
+      background: var(--blog);
+      float: right;
+      font-size: 1.25rem;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      transition: all 0.4s ease;
+    }
+  
+    .submit-btn a:hover {
+      background-color: var(--blog-secondary);
+    }
+  
+    .submit-btn a svg {
+      margin-left: 0.6rem;
+    }
+  
+    .social-contact {
+      padding: 2rem 1.25rem;
+      height: 440px;
+    }
+  
+    .contact-info-section {
+        flex-direction: column;
+        align-items: center;
+        margin-top: -50px;
+        padding: 2rem 1rem;
+    }
+  
+    .contact-card {
+        width: 100%;
+        max-width: 100%;
+    }
+  
+    .contact-title h1 {
+        font-size: 2.5rem;
+    }
+  
+    .contact-title p {
+        font-size: 1rem;
+    }
+  
+    .image {
+        height: 50vh;
+    }
+  }
+  
+  /* Animation for cards */
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  .contact-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .email-card {
+    animation-delay: 0.2s;
+  }
+  
+  .social-card {
+    animation-delay: 0.4s;
+  }
+  
+  .youtube-card {
+    animation-delay: 0.6s;
+  }
+  

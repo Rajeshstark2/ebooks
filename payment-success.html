@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add floating bubbles */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: bubble 20s linear infinite;
+            z-index: 1;
+        }
+
+        body::after {
+            animation-delay: -10s;
+            animation-duration: 25s;
+        }
+
+        .success-container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease-out;
+            box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .success-icon svg {
+            width: 60px;
+            height: 60px;
+            fill: white;
+        }
+
+        h1 {
+            color: #28a745;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.5s ease-out 0.3s both;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.5s ease-out 0.4s both;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .back-button {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+        }
+
+        .download-button {
+            background: linear-gradient(45deg, #28a745, #218838);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            animation: fadeInUp 0.5s ease-out 0.5s both;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes bubble {
+            0% {
+                transform: translateY(100%) scale(1);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100%) scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+            </svg>
+        </div>
+        <h1>Payment Successful!</h1>
+        <p>Thank you for your purchase. Your ebook is ready for download.</p>
+        <div class="buttons-container">
+            <button onclick="downloadEbook()" class="button download-button">Download Ebook</button>
+            <a href="/" class="button back-button" onclick="return handleReturn()">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('order_id');
+            const bookId = urlParams.get('book_id');
+
+            console.log('Payment success page loaded:', { orderId, bookId });
+
+            if (orderId && bookId) {
+                localStorage.setItem(`book_${bookId}_purchased`, 'true');
+                localStorage.setItem(`order_${bookId}`, orderId);
+            }
+        });
+
+        function downloadEbook() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('book_id');
+            const orderId = urlParams.get('order_id');
+            
+            console.log('Initiating download:', { bookId, orderId });
+            if (!bookId || !orderId) {
+                console.error('Missing book ID or order ID');
+                return;
+            }
+            const downloadUrl = `/ebooks/${bookId}.pdf?orderId=${orderId}`;
+            window.location.href = downloadUrl;
+        }
+
+        function handleReturn() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('book_id');
+            const orderId = urlParams.get('order_id');
+            
+            if (bookId && orderId) {
+                localStorage.setItem(`book_${bookId}_purchased`, 'true');
+                localStorage.setItem(`order_${bookId}`, orderId);
+            }
+            
+            window.location.href = '/';
+            return false;
+        }
+    </script>
+</body>
+</html> 

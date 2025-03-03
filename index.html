@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/universal.css" />
+    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <title>E-Book Store</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof Cashfree === 'undefined') {
+                console.error('Cashfree SDK not loaded properly');
+            }
+        });
+    </script>
+       <style>
+        .buy-button {
+            background-color: #ff6666; /* Light red */
+            color: white; /* Text color */
+            border: none; /* Remove default border */
+            padding: 10px 20px; /* Adjust padding */
+            font-size: 16px; /* Adjust font size */
+            border-radius: 10px; /* Smooth border radius */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        .buy-button:hover {
+            background-color: #ff4d4d; /* Slightly darker red on hover */
+        }
+    </style>
+  </head>
+  <body class="dark">
+    <header>
+      <nav style="position: fixed; top: 0; width: 100%;">
+        <div class="nav-bar">
+          <li>
+            <a class="text-white text-center" href="#"><h1>E-Books Store</h1></a>
+          </li>
+          
+
+          <div style="display: flex;">
+            <div class="wrapper">
+              <input type="checkbox" id="hide_checkbox" checked>
+              <label for="hide_checkbox" class="toggle">
+                <span class="toggle-button">
+                  <span class="crater crater-1"></span>
+                  <span class="crater crater-2"></span>
+                  <span class="crater crater-3"></span>   
+                  <span class="crater crater-4"></span>
+                  <span class="crater crater-5"></span>
+                  <span class="crater crater-6"></span>
+                  <span class="crater crater-7"></span>
+                </span>
+                <span class="star star-1"></span>
+                <span class="star star-2"></span>
+                <span class="star star-3"></span>
+                <span class="star star-4"></span>
+                <span class="star star-5"></span>
+                <span class="star star-6"></span>
+                <span class="star star-7"></span>
+                <span class="star star-8"></span>
+              </label>
+            </div>
+
+
+          <input type="checkbox" id="check" />
+          <span class="menu font-sans">
+            <li>
+              <a class="text-white text-center" href="#courses">E-Books</a>
+            </li>
+            <li><a class="text-white text-center" href="pages/contact us/contact.html">Contact Us</a></li>
+          
+            <li>
+              <a href="#courses">
+              <button class="btn-design text-bold">Buy Now</button></a>
+            </li>
+            <label for="check" class="close-menu">
+              <i class="text-white fas fa-times"></i>
+            </label>
+          </span>
+
+        </div>
+
+          <label for="check" class="open-menu">
+            <i class="text-white fas fa-bars"></i>
+          </label>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="first-section">
+        <div class="headerText font-sans">
+          <h2 class="section-one-title text-bold">
+            E-Book Store <br /><span>Available At All <span class="typed_text"></span></span>
+          </h2>
+          <h3 class="text-white">
+            <b>Unlock Your skills</b> Potential: Budget-friendly Books, Interactive Content, Expert Authors
+          </h3>
+          <a href="#courses" class="text-bold">Explore Books</a>
+        </div>
+        <div class="headerImage-div">
+          <img
+            src="images/headerImage.webp"
+            alt="A Boy Working on Laptop"
+            class="headerImage" />
+        </div>
+      </div>
+
+      <div class="second-section">
+        <div class="journey-title text-bold text-center">
+          <p class="font-sans">we are Best For </p>
+        </div>
+        <div class="journey-list">
+          <div class="journey-items font-sans text-center">
+            <h4>4.7⭐️</h4>
+            <p>Books ratings</p>
+          </div>
+          <div class="border-right"></div>
+          <div class="journey-items font-sans text-center">
+            <h4 id="count1">1189</h4>
+            <p>Buyers</p>
+          </div>
+          <div class="border-right"></div>
+          <div class="journey-items font-sans text-center">
+            <h4 id="count2">10+</h4>
+            <p>E-Books</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="line-div"></div>
+
+      <div id="courses" class="third-section font-sans">
+        <div>
+          <h1 class="third-section-title text-center title">
+            What would you like to <span><b>Buy?</b></span>
+          </h1>
+        </div>
+        <div class="book-container">
+          <div class="book-pair">
+            <!-- Book 1 (Left) -->
+            <div class="book-card left">
+              <a href="#">
+                <div class="book-image">
+                  <img src="img23.jpg" alt="Book Thumbnail" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Windows Registry Forensics</h3>
+                  <p class="book-author"> by Harlan Carvey</p>
+                  <div class="book-price">
+                    <span class="final-price">₹150</span>
+                    <span class="prev-price">₹999</span>
+                  </div>
+                  <button id="buy-button-book1" class="buy-button">Buy Now</button>
+
+                </div>
+              </a>
+            </div>
+            <!-- Book 2 (Right) -->
+            <div class="book-card right">
+              <a href="#">
+                <div class="book-image">
+                  <img src="img2.jpg" alt="Book Thumbnail" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Penetraction Testing</h3>
+                  <p class="book-author">by Georgia Weidman</p>
+                  <div class="book-price">
+                    <span class="final-price">₹299</span>
+                    <span class="prev-price">₹1099</span>
+                  </div>
+                  <button id="buy-button-book2" class="buy-button">Buy Now</button>
+
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="book-container">
+          <div class="book-pair">
+            <!-- Book 1 (Left) -->
+            <div class="book-card left">
+              <a href="#">
+                <div class="book-image">
+                  <img src="img8.jpg" alt="Book Thumbnail" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Windows Virus and Malware Troubleshooting</h3>
+                  <p class="book-author"> by Andrew Bettany</p>
+                  <div class="book-price">
+                    <span class="final-price">₹136</span>
+                    <span class="prev-price">₹1999</span>
+                  </div>
+                  <button id="buy-button-book3" class="buy-button">Buy Now</button>
+
+                </div>
+              </a>
+            </div>
+            <!-- Book 2 (Right) -->
+            <div class="book-card right">
+              <a href="#">
+                <div class="book-image">
+                  <img src="img7.jpg" alt="Book Thumbnail" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Writing an Effective Penetration test Report</h3>
+                  <p class="book-author">by Hammad Arshed </p>
+                  <div class="book-price">
+                    <span class="final-price">₹199</span>
+                    <span class="prev-price">₹1099</span>
+                  </div>
+                  <button id="buy-button-book4" class="buy-button">Buy Now</button>
+
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="book-container">
+          <div class="book-pair">
+            <!-- Book 1 (Left) -->
+            <div class="book-card left">
+              <a href="#">
+                <div class="book-image">
+                  <img src="img3.jpg" alt="Book Thumbnail" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Operating System Concepts</h3>
+                  <p class="book-author">9th Edition</p>
+                  <div class="book-price">
+                    <span class="final-price">₹299</span>
+                    <span class="prev-price">₹1539</span>
+                  </div>
+                  <button id="buy-button-book5" class="buy-button">Buy Now</button>
+
+                </div>
+              </a>
+            </div>
+            <!-- Book 2 (Right) -->
+            <div class="book-card right">
+              <a href="#">
+                <div class="book-image">
+                  <img src="img4.jpg" alt="Book Thumbnail" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Web Security Testing Guide</h3>
+                  <p class="book-author">by Rick Mitchell</p>
+                  <div class="book-price">
+                    <span class="final-price">₹239</span>
+                    <span class="prev-price">₹1099</span>
+                  </div>
+                  <button id="buy-button-book6" class="buy-button">Buy Now</button>
+
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="book-container">
+          <div class="book-pair">
+            <!-- Book 1 (Left) -->
+            <div class="book-card left">
+              <a href="#">
+                <div class="book-image">
+                  <img src="img6.jpg" alt="Book Thumbnail" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Web Hacking </h3>
+                  <p class="book-author">by Peter Yaworski</p>
+                  <div class="book-price">
+                    <span class="final-price">₹287</span>
+                    <span class="prev-price">₹999</span>
+                  </div>
+                  <button id="buy-button-book7" class="buy-button">Buy Now</button>
+
+                </div>
+              </a>
+            </div>
+            <!-- Book 2 (Right) -->
+            <div class="book-card right">
+              <a href="#">
+                <div class="book-image">
+                  <img src="img5.jpg" alt="Book Thumbnail" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Web Hacking Arsenal</h3>
+                  <p class="book-author">by Rafay Baloch</p>
+                  <div class="book-price">
+                    <span class="final-price">₹155</span>
+                    <span class="prev-price">₹1156</span>
+                  </div>
+                  <button id="buy-button-book8" class="buy-button">Buy Now</button>
+
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="line-div"></div>
+
+      <div class="advantage-section bg-dark">
+        <div class="advantage-sub-section">
+          <div class="whycm-container">
+            <div>
+              <h1 class="advantage-title title font-sans margin-0">
+                E-Book Store
+              </h1>
+              <p class="advantage-desc font-poppin margin-0">
+                Discover More, Spend Less: Learn Hacking And Coding for the Price of a Food🍕
+              </p>
+            </div>
+
+            <div class="adv-section">
+              <div class="adv-card">
+                <img src="images/pocketFriendlyCourses.webp" alt="" />
+                <span class="adv-desc margin-0"
+                  >Pocket-Friendly Cost: learn on a Budget!</span
+                >
+              </div>
+
+              <div class="adv-card">
+                <img src="images/detailedExplanations.webp" alt="" />
+                <span class="adv-desc margin-0"
+                  >premium edition & Detailed Explanations</span
+                >
+              </div>
+
+              <div class="adv-card">
+                <img src="images/lifetimeAccess.webp" alt="" />
+                <span class="adv-desc margin-0"
+                  >Lifetime access</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="line-div"></div>
+
+    </main>
+
+    <div class="line-div"></div>
+
+    <footer>
+      <div class="super-container font-poppin">
+        <div class="components-outer-container">
+          <div class="footer-container">
+            <div class="first">
+              <div class="top">
+                <a class="text-white text-center" href="#"><h1>E-Books Store</h1></a>
+              </div>
+              <div class="bottom">
+                <p class="text-white">
+                  E-Book Store was started with a mission to provide affordable
+                  &amp; high quality education for everyone. we wish to bring
+                  all our courses with top-notch content to our students at
+                  pocket friendly prices with lifetime access.
+                </p>
+                <p class="copyright">
+                  ©2025.Stark Cloudie All rights reserved
+                </p>
+              </div>
+            </div>
+            <div class="second">
+              <ul>
+                <li>
+                  <a href="/#courses" class="footer-nav"
+                    >Our Books</a> </li>
+                 <li> <a href="/#social" class="footer-nav"
+                    >Social Media</a>
+                </li>
+              </ul>
+            </div>
+            <div class="third">
+              <div class="top">
+                <p class="text-white">Get in Touch</p>
+                <div class="social-icons">
+            
+                   
+                  <a
+                    class="text-white"
+                    href="https://www.instagram.com/starkcloudie/"
+                    target="_blank"
+                    rel="noreferrer"
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg></a>
+                  <a
+                    class="text-white"
+                    href="https://www.youtube.com/@hack2game"
+                    target="_blank"
+                    rel="noreferrer">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path></svg></a>
+                </div>
+              </div>
+              <div class="bottom">
+                <p class="text-white">Contact Us</p>
+                <a href="mailto:starkcloudie@gmail.com" class="text-white">starkcloudie@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Customer Details Form Modal -->
+    <div id="customer-form-modal" class="modal">
+      <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <div class="modal-container">
+              <div class="form-side">
+                  <h2>Enter Your Details</h2>
+                  <form id="customer-form">
+                      <div class="form-group">
+                          <input type="text" id="customerName" required>
+                          <label for="customerName">Full Name</label>
+                          <span class="focus-border"></span>
+                      </div>
+                      <div class="form-group">
+                          <input type="email" id="customerEmail" required>
+                          <label for="customerEmail">Email Address</label>
+                          <span class="focus-border"></span>
+                      </div>
+                      <div class="form-group">
+                          <input type="tel" id="customerPhone" required>
+                          <label for="customerPhone">Phone Number</label>
+                          <span class="focus-border"></span>
+                      </div>
+                      <button type="submit" class="submit-btn">
+                          <span class="btn-text">Proceed to Payment</span>
+                          <div class="btn-progress"></div>
+                      </button>
+                  </form>
+              </div>
+              <div class="image-side">
+                  <div class="book-preview">
+                      <img id="selected-book-image" src="" alt="Book Cover">
+                      <div class="book-details">
+                          <h3 id="selected-book-title"></h3>
+                          <p id="selected-book-price"></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <style>
+  /* Modal Styles */
+  .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+  }
+
+  .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 1000px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      animation: modalFadeIn 0.5s ease-out;
+  }
+
+  .modal-container {
+      display: flex;
+      min-height: 500px;
+  }
+
+  /* Form Side Styles */
+  .form-side {
+      flex: 1;
+      padding: 40px;
+      background: white;
+  }
+
+  .form-side h2 {
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+  }
+
+  .form-group {
+      position: relative;
+      margin-bottom: 30px;
+  }
+
+  .form-group input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      border: none;
+      border-bottom: 2px solid #ddd;
+      outline: none;
+      transition: all 0.3s;
+      background: transparent;
+  }
+
+  .form-group label {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      font-size: 16px;
+      color: #999;
+      pointer-events: none;
+      transition: all 0.3s ease;
+  }
+
+  .form-group input:focus ~ label,
+  .form-group input:valid ~ label {
+      top: -20px;
+      font-size: 12px;
+      color: #007bff;
+  }
+
+  .form-group .focus-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #007bff;
+      transition: all 0.3s;
+  }
+
+  .form-group input:focus ~ .focus-border {
+      width: 100%;
+  }
+
+  /* Image Side Styles */
+  .image-side {
+      flex: 1;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .image-side::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 60%);
+      animation: rotate 20s linear infinite;
+  }
+
+  .book-preview {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transform: perspective(1000px) rotateY(0deg);
+      transition: transform 0.5s ease;
+  }
+
+  .book-preview:hover {
+      transform: perspective(1000px) rotateY(10deg);
+  }
+
+  .book-preview img {
+      max-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+  }
+
+  .book-preview:hover img {
+      transform: translateX(-10px);
+  }
+
+  .book-details {
+      margin-top: 20px;
+      color: white;
+      text-align: center;
+  }
+
+  .book-details h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
+
+  .book-details p {
+      font-size: 18px;
+      opacity: 0.9;
+  }
+
+  /* Button Styles */
+  .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(45deg, #007bff, #00c6ff);
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+  }
+
+  .btn-progress {
+      position: absolute;
+      height: 100%;
+      width: 0;
+      top: 0;
+      left: 0;
+      background: rgba(255,255,255,0.1);
+      transition: width 0.3s ease;
+  }
+
+  /* Animations */
+  @keyframes modalFadeIn {
+      from {
+          opacity: 0;
+          transform: translate(-50%, -60%);
+      }
+      to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+      }
+  }
+
+  @keyframes rotate {
+      from {
+          transform: rotate(0deg);
+      }
+      to {
+          transform: rotate(360deg);
+      }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .modal-container {
+          flex-direction: column;
+      }
+      
+      .image-side {
+          display: none;
+      }
+      
+      .form-side {
+          padding: 20px;
+      }
+  }
+
+  /* Add these new styles */
+  .close-button {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #666;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      z-index: 10;
+  }
+
+  .close-button:hover {
+      color: #ff4444;
+      transform: rotate(90deg);
+      background: rgba(0,0,0,0.1);
+  }
+
+  .modal-content {
+      position: relative; /* Ensure this is set for absolute positioning of close button */
+  }
+
+  /* Update existing modal animation to include the close button rotation */
+  @keyframes modalFadeIn {
+      from {
+          opacity: 0;
+          transform: translate(-50%, -60%);
+      }
+      to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+      }
+  }
+
+  /* Add animation for close button entrance */
+  @keyframes spinIn {
+      from {
+          transform: rotate(-180deg);
+          opacity: 0;
+      }
+      to {
+          transform: rotate(0);
+          opacity: 1;
+      }
+  }
+
+  .close-button {
+      animation: spinIn 0.5s ease-out;
+  }
+  </style>
+
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed(".typed_text", {
+        strings: ["Time!", "Days!"],
+        typeSpeed:100,
+        backSpeed:100,
+        loop:true
+      })
+    </script>
+    
+    <script src="script.js"></script>
+    <script>
+      function showPaymentForm(book) {
+          const modal = document.getElementById('customer-form-modal');
+          const bookImage = document.getElementById('selected-book-image');
+          const bookTitle = document.getElementById('selected-book-title');
+          const bookPrice = document.getElementById('selected-book-price');
+          
+          // Set book details in the form
+          bookImage.src = book.coverImage;
+          bookTitle.textContent = book.title;
+          bookPrice.textContent = `₹${book.price}`;
+          
+          modal.style.display = 'block';
+          
+          // Store selected book data
+          window.selectedBook = book;
+      }
+  
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+          const modal = document.getElementById('customer-form-modal');
+          if (event.target == modal) {
+              modal.style.display = 'none';
+          }
+      }
+  
+      // Form submission handling
+      document.getElementById('customer-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const submitBtn = e.target.querySelector('.submit-btn');
+          const btnText = submitBtn.querySelector('.btn-text');
+          const btnProgress = submitBtn.querySelector('.btn-progress');
+          
+          submitBtn.disabled = true;
+          btnText.textContent = 'Processing...';
+          btnProgress.style.width = '100%';
+          
+          const customerData = {
+              customerName: document.getElementById('customerName').value,
+              email: document.getElementById('customerEmail').value,
+              phone: document.getElementById('customerPhone').value,
+              price: window.selectedBook.price,
+              bookId: window.selectedBook.id
+          };
+          
+          try {
+              await initPayment(customerData);
+          } catch (error) {
+              submitBtn.disabled = false;
+              btnText.textContent = 'Proceed to Payment';
+              btnProgress.style.width = '0';
+          }
+      });
+  
+      // Add this to your existing script
+      document.querySelector('.close-button').addEventListener('click', function() {
+          document.getElementById('customer-form-modal').style.display = 'none';
+      });
+  
+      // Update the window click handler to include the new close functionality
+      window.onclick = function(event) {
+          const modal = document.getElementById('customer-form-modal');
+          if (event.target == modal) {
+              modal.style.display = 'none';
+          }
+      }
+  
+      // Add escape key handler
+      document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+              const modal = document.getElementById('customer-form-modal');
+              if (modal.style.display === 'block') {
+                  modal.style.display = 'none';
+              }
+          }
+      });
+      </script>
+  </body>
+</html>
