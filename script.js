@@ -11,7 +11,7 @@ const initPayment = async (orderData) => {
 
         console.log('Creating order on backend...');
         // First, get order token from your backend
-        const orderResponse = await fetch('http://localhost:3000/create-order', {
+        const orderResponse = await fetch('https://ebooks-ppuo.onrender.com/create-order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ const initPayment = async (orderData) => {
         // Show payment UI
         cashfree.checkout({
             paymentSessionId: orderToken,
-            returnUrl: `http://localhost:3000/payment-success.html?order_id=${orderId}&book_id=${orderData.bookId}`
+            returnUrl: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${orderData.bookId}`
         });
 
     } catch (error) {
