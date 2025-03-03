@@ -190,12 +190,26 @@
             const urlParams = new URLSearchParams(window.location.search);
             const orderId = urlParams.get('order_id');
             const bookId = urlParams.get('book_id');
+            const paymentStatus = urlParams.get('payment_status');
 
-            console.log('Payment success page loaded:', { orderId, bookId });
+            console.log('Payment success page loaded:', { orderId, bookId, paymentStatus });
 
-            if (orderId && bookId) {
+            // Only store purchase info if payment was successful
+            if (orderId && bookId && paymentStatus === 'SUCCESS') {
                 localStorage.setItem(`book_${bookId}_purchased`, 'true');
                 localStorage.setItem(`order_${bookId}`, orderId);
+                // Show success message and download button
+                document.querySelector('.success-container').style.display = 'block';
+            } else {
+                // Show error message and hide download button
+                document.querySelector('h1').textContent = 'Payment Not Completed';
+                document.querySelector('p').textContent = 'Your payment was not completed successfully.';
+                document.querySelector('.download-button').style.display = 'none';
+                // Clean up any stored data
+                if (bookId) {
+                    localStorage.removeItem(`book_${bookId}_purchased`);
+                    localStorage.removeItem(`order_${bookId}`);
+                }
             }
         });
 
