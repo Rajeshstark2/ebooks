@@ -53,7 +53,14 @@ const initPayment = async (orderData) => {
         // Show payment UI
         cashfree.checkout({
             paymentSessionId: orderToken,
-            returnUrl: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${orderData.bookId}`
+            returnUrl: `http://localhost:3000/payment-success.html?order_id=${orderId}&book_id=${orderData.bookId}`,
+            onError: function(data) {
+                console.log('Payment failed or was cancelled:', data);
+                // Remove any stored data for this book
+                localStorage.removeItem(`book_${orderData.bookId}_purchased`);
+                localStorage.removeItem(`order_${orderData.bookId}`);
+                localStorage.removeItem('last_purchased_book');
+            }
         });
 
     } catch (error) {
