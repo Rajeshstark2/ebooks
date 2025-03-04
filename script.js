@@ -133,7 +133,7 @@ const BOOK_CATALOG = {
     book7: {
         id: 'book7',
         title: 'Web Hacking',
-        price: '287.00',
+        price: '5.00',
         originalPrice: '999.00',
         author: 'Peter Yaworski',
         downloadPath: '/ebooks/book7.pdf',
