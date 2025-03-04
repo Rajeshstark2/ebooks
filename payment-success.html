@@ -185,37 +185,53 @@
         </div>
     </div>
 
-   <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <script>
+        async function verifyPayment(orderId) {
+            try {
+                const response = await fetch(`https://ebooks-ppuo.onrender.com/verify-payment/${orderId}`);
+                const data = await response.json();
+                return data.status === 'PAID';
+            } catch (error) {
+                console.error('Payment verification failed:', error);
+                return false;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async function() {
             const urlParams = new URLSearchParams(window.location.search);
             const orderId = urlParams.get('order_id');
             const bookId = urlParams.get('book_id');
-            const status = urlParams.get('status');
 
-            console.log('Payment success page loaded:', { orderId, bookId, status });
+            console.log('Payment success page loaded:', { orderId, bookId });
 
-            // Only proceed if payment was successful
-            if (orderId && bookId && status === 'success') {
-                // Store purchase info
-                localStorage.setItem(`book_${bookId}_purchased`, 'true');
-                localStorage.setItem(`order_${bookId}`, orderId);
-                // Show success message and download button
-                document.querySelector('.success-container').style.display = 'block';
+            if (orderId && bookId) {
+                // Verify payment status
+                const isPaymentSuccessful = await verifyPayment(orderId);
+                
+                if (isPaymentSuccessful) {
+                    // Store purchase info
+                    localStorage.setItem(`book_${bookId}_purchased`, 'true');
+                    localStorage.setItem(`order_${bookId}`, orderId);
+                    // Show success message and download button
+                    document.querySelector('.success-container').style.display = 'block';
+                } else {
+                    // Show error message and hide download button
+                    document.querySelector('h1').textContent = 'Payment Not Completed';
+                    document.querySelector('p').textContent = 'Your payment was not completed successfully.';
+                    document.querySelector('.download-button').style.display = 'none';
+                    // Clean up any stored data
+                    localStorage.removeItem(`book_${bookId}_purchased`);
+                    localStorage.removeItem(`order_${bookId}`);
+                }
             } else {
                 // Show error message and hide download button
                 document.querySelector('h1').textContent = 'Payment Not Completed';
                 document.querySelector('p').textContent = 'Your payment was not completed successfully.';
                 document.querySelector('.download-button').style.display = 'none';
-                // Clean up any stored data
-                if (bookId) {
-                    localStorage.removeItem(`book_${bookId}_purchased`);
-                    localStorage.removeItem(`order_${bookId}`);
-                }
             }
         });
 
-
-        function downloadEbook() {
+        async function downloadEbook() {
             const urlParams = new URLSearchParams(window.location.search);
             const bookId = urlParams.get('book_id');
             const orderId = urlParams.get('order_id');
@@ -225,18 +241,30 @@
                 console.error('Missing book ID or order ID');
                 return;
             }
+
+            // Verify payment status before allowing download
+            const isPaymentSuccessful = await verifyPayment(orderId);
+            if (!isPaymentSuccessful) {
+                console.error('Payment not verified');
+                return;
+            }
+
             const downloadUrl = `/ebooks/${bookId}.pdf?orderId=${orderId}`;
             window.location.href = downloadUrl;
         }
 
-        function handleReturn() {
+        async function handleReturn() {
             const urlParams = new URLSearchParams(window.location.search);
             const bookId = urlParams.get('book_id');
             const orderId = urlParams.get('order_id');
             
             if (bookId && orderId) {
-                localStorage.setItem(`book_${bookId}_purchased`, 'true');
-                localStorage.setItem(`order_${bookId}`, orderId);
+                // Verify payment status before storing
+                const isPaymentSuccessful = await verifyPayment(orderId);
+                if (isPaymentSuccessful) {
+                    localStorage.setItem(`book_${bookId}_purchased`, 'true');
+                    localStorage.setItem(`order_${bookId}`, orderId);
+                }
             }
             
             window.location.href = '/';
