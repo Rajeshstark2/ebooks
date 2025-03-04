@@ -88,7 +88,7 @@ const BOOK_CATALOG = {
     book2: {
         id: 'book2',
         title: 'Penetration Testing',
-        price: '299.00',
+        price: '199.00',
         originalPrice: '1099.00',
         author: 'Georgia Weidman',
         downloadPath: '/ebooks/book2.pdf',
@@ -115,7 +115,7 @@ const BOOK_CATALOG = {
     book5: {
         id: 'book5',
         title: 'Operating System Concepts (9th Edition)',
-        price: '299.00',
+        price: '189.00',
         originalPrice: '1539.00',
         author: 'Abraham Silberschatz',
         downloadPath: '/ebooks/book5.pdf',
@@ -124,7 +124,7 @@ const BOOK_CATALOG = {
     book6: {
         id: 'book6',
         title: 'Web Security Testing Guide',
-        price: '239.00',
+        price: '119.00',
         originalPrice: '1099.00',
         author: 'Rick Mitchell',
         downloadPath: '/ebooks/book6.pdf',
@@ -133,7 +133,7 @@ const BOOK_CATALOG = {
     book7: {
         id: 'book7',
         title: 'Web Hacking',
-        price: '5.00',
+        price: '125.00',
         originalPrice: '999.00',
         author: 'Peter Yaworski',
         downloadPath: '/ebooks/book7.pdf',
@@ -142,7 +142,7 @@ const BOOK_CATALOG = {
     book8: {
         id: 'book8',
         title: 'Web Application Penetraction Testing',
-        price: '209.00',
+        price: '178.00',
         originalPrice: '1156.00',
         author: 'Rafay Baloch',
         downloadPath: '/ebooks/book8.pdf',
