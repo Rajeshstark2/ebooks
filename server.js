@@ -50,14 +50,24 @@ app.post('/create-order', async (req, res) => {
                 customer_email: customerEmail,
                 customer_phone: customerPhone
             },
-          // ... existing code ...
-              order_meta: {
-                return_url: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${bookId}&status=success`,
+            order_meta: {
+                return_url: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${bookId}`,
                 payment_methods: "cc,dc,upi,nb"
             }
-// ... existing code ...
         };
         console.log('Order payload:', orderPayload);
+
+        // Store order details for verification
+        const orderDetails = {
+            orderId,
+            bookId,
+            amount: parseFloat(orderAmount),
+            status: 'pending'
+        };
+        
+        // Store order details (you should use a database in production)
+        global.orders = global.orders || new Map();
+        global.orders.set(orderId, orderDetails);
 
         try {
             const orderResponse = await axios.post(
@@ -172,6 +182,39 @@ app.get('/ebooks/:filename', async (req, res) => {
     } catch (error) {
         console.error('Error serving PDF:', error);
         res.status(500).json({ error: 'Error serving PDF file' });
+    }
+});
+
+// Add payment verification endpoint
+app.get('/verify-payment/:orderId', async (req, res) => {
+    try {
+        const { orderId } = req.params;
+        const order = global.orders.get(orderId);
+        
+        if (!order) {
+            return res.status(404).json({ error: 'Order not found' });
+        }
+
+        // Verify payment status with Cashfree
+        const response = await axios.get(
+            `${CASHFREE_BASE_URL}/orders/${orderId}`,
+            {
+                headers: {
+                    'x-client-id': CASHFREE_API_KEY,
+                    'x-client-secret': CASHFREE_API_SECRET,
+                    'x-api-version': '2022-09-01'
+                }
+            }
+        );
+
+        const paymentStatus = response.data.order_status;
+        order.status = paymentStatus;
+        global.orders.set(orderId, order);
+
+        res.json({ status: paymentStatus });
+    } catch (error) {
+        console.error('Payment verification failed:', error);
+        res.status(500).json({ error: 'Payment verification failed' });
     }
 });
 
