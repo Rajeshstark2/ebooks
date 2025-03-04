@@ -51,8 +51,8 @@ app.post('/create-order', async (req, res) => {
                 customer_phone: customerPhone
             },
           // ... existing code ...
-            order_meta: {
-                return_url: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${bookId}`,
+              order_meta: {
+                return_url: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${bookId}&status=success`,
                 payment_methods: "cc,dc,upi,nb"
             }
 // ... existing code ...
