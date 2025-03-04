@@ -50,11 +50,12 @@ app.post('/create-order', async (req, res) => {
                 customer_email: customerEmail,
                 customer_phone: customerPhone
             },
+          // ... existing code ...
             order_meta: {
-                return_url: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${bookId}&payment_status=${payment_status}`,
+                return_url: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${bookId}`,
                 payment_methods: "cc,dc,upi,nb"
             }
-            
+// ... existing code ...
         };
         console.log('Order payload:', orderPayload);
 
