@@ -324,7 +324,7 @@ document.head.appendChild(paymentStyles);
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Start animations
-    countAnimation(100000, 'count1');
+    countAnimation(1189, 'count1');
     countAnimation(20, 'count2');
 
     // Initialize theme switching
