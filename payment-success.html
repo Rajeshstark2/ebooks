@@ -185,16 +185,18 @@
         </div>
     </div>
 
-   <script>
+  
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const orderId = urlParams.get('order_id');
             const bookId = urlParams.get('book_id');
+            const status = urlParams.get('status');
 
-            console.log('Payment success page loaded:', { orderId, bookId });
+            console.log('Payment success page loaded:', { orderId, bookId, status });
 
-            // Check if we have both orderId and bookId
-            if (orderId && bookId) {
+            // Only proceed if payment was successful
+            if (orderId && bookId && status === 'success') {
                 // Store purchase info
                 localStorage.setItem(`book_${bookId}_purchased`, 'true');
                 localStorage.setItem(`order_${bookId}`, orderId);
