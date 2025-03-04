@@ -141,8 +141,8 @@ const BOOK_CATALOG = {
     },
     book8: {
         id: 'book8',
-        title: 'Web Hacking Arsenal',
-        price: '20.00',
+        title: 'Web Application Penetraction Testing',
+        price: '209.00',
         originalPrice: '1156.00',
         author: 'Rafay Baloch',
         downloadPath: '/ebooks/book8.pdf',
