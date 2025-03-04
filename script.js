@@ -53,7 +53,7 @@ const initPayment = async (orderData) => {
         // Show payment UI
         cashfree.checkout({
             paymentSessionId: orderToken,
-            returnUrl: `http://localhost:3000/payment-success.html?order_id=${orderId}&book_id=${orderData.bookId}`,
+            returnUrl: `https://ebooks-ppuo.onrender.com/payment-success.html?order_id=${orderId}&book_id=${orderData.bookId}`,
             onError: function(data) {
                 console.log('Payment failed or was cancelled:', data);
                 // Remove any stored data for this book
