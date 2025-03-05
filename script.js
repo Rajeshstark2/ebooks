@@ -106,7 +106,7 @@ const BOOK_CATALOG = {
     book4: {
         id: 'book4',
         title: 'Writing an Effective Penetration Test Report',
-        price: '199.00',
+        price: '99.00',
         originalPrice: '1099.00',
         author: 'Hammad Arshed',
         downloadPath: '/ebooks/book4.pdf',
@@ -160,7 +160,7 @@ const BOOK_CATALOG = {
     book10: {
         id: 'book10',
         title: 'The Art of Mac Malware',
-        price: '299.00',
+        price: '110.00',
         originalPrice: '1099.00',
         author: 'Patrick Wardle',
         downloadPath: '/ebooks/book10.pdf',
@@ -169,7 +169,7 @@ const BOOK_CATALOG = {
     book11: {
         id: 'book11',
         title: 'Reinforcement Learning for Cyber Operations',
-        price: '136.00',
+        price: '90.00',
         originalPrice: '1999.00',
         author: 'Ekram Hossain',
         downloadPath: '/ebooks/book11.pdf',
@@ -178,7 +178,7 @@ const BOOK_CATALOG = {
     book12: {
         id: 'book12',
         title: 'Ransomware, Penetration Testing & Contingency Planning',
-        price: '199.00',
+        price: '188.00',
         originalPrice: '1099.00',
         author: 'Ravindra Das',
         downloadPath: '/ebooks/book12.pdf',
@@ -187,7 +187,7 @@ const BOOK_CATALOG = {
     book13: {
         id: 'book13',
         title: 'Penetration Testing with Kali NetHunter',
-        price: '299.00',
+        price: '199.00',
         originalPrice: '1539.00',
         author: 'Tripp Roybal',
         downloadPath: '/ebooks/book13.pdf',
@@ -196,7 +196,7 @@ const BOOK_CATALOG = {
     book14: {
         id: 'book14',
         title: 'Linux Pocket Guide',
-        price: '239.00',
+        price: '49.00',
         originalPrice: '1099.00',
         author: 'Daniel J. Barrett',
         downloadPath: '/ebooks/book14.pdf',
@@ -205,7 +205,7 @@ const BOOK_CATALOG = {
     book15: {
         id: 'book15',
         title: 'Azure Cloud Adoption Framework Handbook',
-        price: '287.00',
+        price: '187.00',
         originalPrice: '999.00',
         author: 'Sasa Kovacevic',
         downloadPath: '/ebooks/book15.pdf',
@@ -214,7 +214,7 @@ const BOOK_CATALOG = {
     book16: {
         id: 'book16',
         title: 'Losing the Cybersecurity War',
-        price: '155.00',
+        price: '5.00',
         originalPrice: '1156.00',
         author: 'Steve King',
         downloadPath: '/ebooks/book16.pdf',
@@ -223,7 +223,7 @@ const BOOK_CATALOG = {
     book17: {
         id: 'book17',
         title: 'Microsoft 365 Fundamentals',
-        price: '136.00',
+        price: '0.00',
         originalPrice: '1999.00',
         author: 'Exam Notes',
         downloadPath: '/ebooks/book17.pdf',
@@ -232,7 +232,7 @@ const BOOK_CATALOG = {
     book18: {
         id: 'book18',
         title: 'Python For Cybersecurity',
-        price: '199.00',
+        price: '99.00',
         originalPrice: '1099.00',
         author: 'Howard E',
         downloadPath: '/ebooks/book18.pdf',
@@ -241,7 +241,7 @@ const BOOK_CATALOG = {
     book19: {
         id: 'book19',
         title: 'SSH Mastery',
-        price: '136.00',
+        price: '86.00',
         originalPrice: '1999.00',
         author: 'Michael W. Lucas',
         downloadPath: '/ebooks/book19.pdf',
@@ -250,7 +250,7 @@ const BOOK_CATALOG = {
     book20: {
         id: 'book20',
         title: 'The Active Defender',
-        price: '199.00',
+        price: '179.00',
         originalPrice: '1099.00',
         author: 'Catherine',
         downloadPath: '/ebooks/book20.pdf',
