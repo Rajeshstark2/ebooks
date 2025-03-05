@@ -223,7 +223,7 @@ const BOOK_CATALOG = {
     book17: {
         id: 'book17',
         title: 'Microsoft 365 Fundamentals',
-        price: '0.00',
+        price: '50.00',
         originalPrice: '1999.00',
         author: 'Exam Notes',
         downloadPath: '/ebooks/book17.pdf',
