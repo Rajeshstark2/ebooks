@@ -214,7 +214,7 @@ const BOOK_CATALOG = {
     book16: {
         id: 'book16',
         title: 'Losing the Cybersecurity War',
-        price: '5.00',
+        price: '145.00',
         originalPrice: '1156.00',
         author: 'Steve King',
         downloadPath: '/ebooks/book16.pdf',
