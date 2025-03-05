@@ -147,9 +147,134 @@ const BOOK_CATALOG = {
         author: 'Rafay Baloch',
         downloadPath: '/ebooks/book8.pdf',
         coverImage: 'img5.jpg'
+    },
+    book9: {
+        id: 'book9',
+        title: 'Penetration Testing With NMAP',
+        price: '150.00',
+        originalPrice: '999.00',
+        author: 'Travis DeForge',
+        downloadPath: '/ebooks/book9.pdf',
+        coverImage: 'img9.jpg'
+    },
+    book10: {
+        id: 'book10',
+        title: 'The Art of Mac Malware',
+        price: '299.00',
+        originalPrice: '1099.00',
+        author: 'Patrick Wardle',
+        downloadPath: '/ebooks/book10.pdf',
+        coverImage: 'img10.jpg'
+    },
+    book11: {
+        id: 'book11',
+        title: 'Reinforcement Learning for Cyber Operations',
+        price: '136.00',
+        originalPrice: '1999.00',
+        author: 'Ekram Hossain',
+        downloadPath: '/ebooks/book11.pdf',
+        coverImage: 'img11.jpg'
+    },
+    book12: {
+        id: 'book12',
+        title: 'Ransomware, Penetration Testing & Contingency Planning',
+        price: '199.00',
+        originalPrice: '1099.00',
+        author: 'Ravindra Das',
+        downloadPath: '/ebooks/book12.pdf',
+        coverImage: 'img12.jpg'
+    },
+    book13: {
+        id: 'book13',
+        title: 'Penetration Testing with Kali NetHunter',
+        price: '299.00',
+        originalPrice: '1539.00',
+        author: 'Tripp Roybal',
+        downloadPath: '/ebooks/book13.pdf',
+        coverImage: 'img13.jpg'
+    },
+    book14: {
+        id: 'book14',
+        title: 'Linux Pocket Guide',
+        price: '239.00',
+        originalPrice: '1099.00',
+        author: 'Daniel J. Barrett',
+        downloadPath: '/ebooks/book14.pdf',
+        coverImage: 'img14.jpg'
+    },
+    book15: {
+        id: 'book15',
+        title: 'Azure Cloud Adoption Framework Handbook',
+        price: '287.00',
+        originalPrice: '999.00',
+        author: 'Sasa Kovacevic',
+        downloadPath: '/ebooks/book15.pdf',
+        coverImage: 'img15.jpg'
+    },
+    book16: {
+        id: 'book16',
+        title: 'Losing the Cybersecurity War',
+        price: '155.00',
+        originalPrice: '1156.00',
+        author: 'Steve King',
+        downloadPath: '/ebooks/book16.pdf',
+        coverImage: 'img16.jpg'
+    },
+    book17: {
+        id: 'book17',
+        title: 'Microsoft 365 Fundamentals',
+        price: '136.00',
+        originalPrice: '1999.00',
+        author: 'Exam Notes',
+        downloadPath: '/ebooks/book17.pdf',
+        coverImage: 'img17.jpg'
+    },
+    book18: {
+        id: 'book18',
+        title: 'Python For Cybersecurity',
+        price: '199.00',
+        originalPrice: '1099.00',
+        author: 'Howard E',
+        downloadPath: '/ebooks/book18.pdf',
+        coverImage: 'img18.jpg'
+    },
+    book19: {
+        id: 'book19',
+        title: 'SSH Mastery',
+        price: '136.00',
+        originalPrice: '1999.00',
+        author: 'Michael W. Lucas',
+        downloadPath: '/ebooks/book19.pdf',
+        coverImage: 'img19.jpg'
+    },
+    book20: {
+        id: 'book20',
+        title: 'The Active Defender',
+        price: '199.00',
+        originalPrice: '1099.00',
+        author: 'Catherine',
+        downloadPath: '/ebooks/book20.pdf',
+        coverImage: 'img20.jpg'
+    },
+    book21: {
+        id: 'book21',
+        title: 'The Cybersecurity Playbook for Modern Enterprises',
+        price: '136.00',
+        originalPrice: '1999.00',
+        author: 'Jeremy Wittkop',
+        downloadPath: '/ebooks/book21.pdf',
+        coverImage: 'img21.jpg'
+    },
+    book22: {
+        id: 'book22',
+        title: 'The Ultimate iOS Interview Playbook',
+        price: '199.00',
+        originalPrice: '1099.00',
+        author: 'ZVI TSDOK',
+        downloadPath: '/ebooks/book22.pdf',
+        coverImage: 'img22.jpg'
     }
 };
-
 // Utility Functions
 function downloadEbook(bookId, orderId) {
     if (!bookId || !orderId) {
